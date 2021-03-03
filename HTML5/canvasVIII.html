@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superposiciones e imagenes</title>
+    <style>
+        #lienzo{
+            border: 1px solid red;
+        }
+    </style>
+    <script>
+
+        var elemento, lienzo;
+
+        function Comenzar(){
+
+            elemento = document.getElementById("lienzo");
+
+            lienzo = elemento.getContext("2d");
+
+           /*
+            lienzo.fillStyle = "#880000";
+
+            lienzo.fillRect(400,250,300,100);
+
+            lienzo.globalCompositeOperation = "source-out";
+            // establece de que forma se van a superponer las imagenes
+            //para verificar las distintas propiedades entrar a w3school globalcompositeoperation
+
+            lienzo.fillStyle = "#AAAAFF";
+
+            lienzo.font = "bold 80px verdana";
+
+            lienzo.textAlign = "center";
+
+            lienzo.textBaseline = "middle";
+
+            lienzo.fillText("Hola Alumnos", 550, 300);
+            */
+
+           
+
+            //var imagen = new Image();
+
+            //imagen.src = "http://www.pildorasinformaticas.com/archivos/logos/html5online.jpg";
+
+            //imagen.addEventListener("load", function(){lienzo.drawImage(imagen,50,10,75,75,0,0,300,300)}, false);
+            // se escarga una imagen a traves de una funcion anonima
+            /*
+            Los dos primeros parametros indican donde empezamos a recortar la imagen
+            los dos sig hacen ref al tamaño de la imagen antes de recordar
+            los dos sig indican donde queremos dibujar la imagen recortada
+            la ultima pareja del tamaño hace ref al tamaño final del recorte
+            */
+
+            /*
+            el metodo drawImage tiene varias sobrecargas:
+            drawImage(imagen, x, y)
+            drawImage(imagen, x, y, ancho, alto)
+            la tercera sobrecarga es la descripta mas arriba
+            */
+
+            
+
+            var imagen = new Image();
+
+            imagen.src = "C:\Users\nico\Desktop\HTML5\imagenes\paisaje.jpg";
+
+            imagen.addEventListener("load", ManipularImagen, false);
+        }
+
+        function ManipularImagen(e){
+
+            imagen = e.target;
+
+            lienzo.drawImage(imagen,0,0);
+
+            var infoImagen = lienzo.getImageData(0,0,145,145); 
+            //almacena la info de colores de la imagen en un array, solo de un recorte
+
+            var posicion;
+
+            for(x=0;x<=145;x++){
+                for(y=0;y<=145;y++){
+                    
+                    posicion = (infoImagen.width*4*y)+(x*4);
+
+                    infoImagen[posicion] = 255 - infoImagen[posicion];
+                    infoImagen[posicion+1] = 255 - infoImagen[posicion+1];
+                    infoImagen[posicion+2] = 255 - infoImagen[posicion+2];
+
+                }
+            }
+
+            lienzo.putImageData(infoImagen,0,0);
+            // posiciona la informacion manipulada en las coordenadas (0,0)
+        }
+
+        window.addEventListener("load", Comenzar, false);
+    </script>
+</head>
+<body>
+    <section>
+        <canvas id="lienzo" width="1200" height="900">
+
+        </canvas>
+    </section>
+</body>
+</html>

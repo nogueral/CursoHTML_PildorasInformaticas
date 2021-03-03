@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+</head>
+<body>
+    <section>
+        <form name="registro" method="GET">
+            <datalist id="informacion">
+                <option value="1530912259" label="    Telefono 1"></option>
+                <option value="1522222222" label="    Telefono 2"></option>
+                <option value="1533333333" label="    Telefono 3"></option>
+            </datalist>
+            <!--
+                El elemento datalist permite mostrar una lista desplegable de objetos
+                en un combobox. Para que esto sea posible, se debe declarar el input
+                y el valor asignado a list debe coincidir con el id del objeto datalist
+            -->
+            Telefono:&nbsp;<input type="tel" name="telefono" id="telefono" list="informacion">
+        </form>
+    </section>
+    
+</body>
+</html>

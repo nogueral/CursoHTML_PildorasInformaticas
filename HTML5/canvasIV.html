@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trazados curvos</title>
+    <style>
+        #lienzo{
+            border: 1px solid #F00;
+        }
+    </style>
+    <script>
+        function Comenzar(){
+
+            var elemento = document.getElementById("lienzo");
+
+            var lienzo = elemento.getContext("2d");
+
+            lienzo.beginPath();
+
+            //lienzo.arc(100, 100, 50, 0, 1, false);
+            //lienzo.arc(250, 100, 100, 0, Math.PI, true);
+            /*
+            METODO ARC
+            los dos 1ros parametros indican el punto donde comienza el dibujo (coordenadas x e y)
+            el 3er parametro corresponde al radio del circulo
+            el 4to y 5to parametro establecen el angulo inicial y final
+            el ultimo parametro (bool) te devuelve el arco (false) o todo el circulo sin el arco (true)
+            */
+
+            lienzo.moveTo(250,50); // desplazo el lapiz al punto inicial
+            //lienzo.quadraticCurveTo(100,125,50,200);
+            /*
+            los ultimos dos parametros indican el pto final
+            los primeros el punto de control (curva)
+            */
+
+            lienzo.bezierCurveTo(200,125,300,125,250,200);
+            /*
+            tiene 2 puntos de control
+            el moveTo indica el punto inicial
+            los dos 1ros parametros de bezier corresponden al 1er pto de control
+            los siguientes dos corresponden al 2do pto de ctrol
+            los ultimos dos corresponden al pto final de trazado
+            */
+
+            lienzo.stroke();
+        }
+
+
+        window.addEventListener("load", Comenzar, false);
+    </script>
+</head>
+<body>
+    <section>
+        <canvas id="lienzo" height="300" width="500">
+
+        </canvas>
+    </section>
+    
+</body>
+</html>

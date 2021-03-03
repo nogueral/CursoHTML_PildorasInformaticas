@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto en canvas</title>
+    <style>
+        #lienzo{
+            border: 1px solid red;
+        }
+        section{
+            width: 800px;
+            margin: auto;
+            position: relative;
+        }
+    </style>
+    <script>
+        function Comenzar(){
+            var elemento = document.getElementById("lienzo");
+
+            var lienzo = elemento.getContext("2d");
+            lienzo.shadowColor="rgba(0,0,0,0.5)";
+
+            lienzo.font = "bold 48px verdana";
+            lienzo.textAlign = "start";
+            lienzo.textBaseLine = "top";
+            lienzo.fillText("Hola alumnos", 100, 100);
+
+            var dimensiones = lienzo.measureText("Hola alumnos");
+
+            lienzo.strokeRect(100,100,dimensiones.width,48);
+
+
+
+        }
+
+        window.addEventListener("load", Comenzar, false);
+    </script>
+</head>
+<body>
+    <section>
+        <canvas id="lienzo" width="800" height="600">
+
+        </canvas>
+    </section>
+    
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+
+    <style>
+        #lienzo{
+            background-color: chartreuse;
+        }
+        section{
+            width: 500px;
+            position:relative;
+            margin: auto;
+        }
+    </style>
+
+    <script>
+        function Comenzar(){
+
+            var elemento = document.getElementById("lienzo");
+
+            lienzo = elemento.getContext("2d");
+
+            //lienzo.fillStyle="blue";
+            lienzo.strokeStyle="blue";
+            lienzo.fillStyle="yellow";
+            lienzo.globalAlpha=0.5;
+            
+
+            //lienzo.fillRect(110, 80, 200, 200);
+            lienzo.strokeRect(100, 100, 120, 120);
+            lienzo.fillRect(110, 110, 100, 100);
+            lienzo.clearRect(120, 120, 80, 80);
+            //lienzo.clearRect(130, 130, 50, 50);
+
+            
+        }
+
+        window.addEventListener("load", Comenzar, false);
+    </script>
+</head>
+<body>
+    <section id="dibujo">
+        <canvas id="lienzo" width="500" height="300">
+            Esto es un navegador no soporta el elemento HTML5 Canvas 
+        </canvas>
+    </section>
+    <!--
+        API CANVAS: METODOS.
+        getContext("2d"); determina las dimensiones del objeto
+        fillRect(x,y,ancho,alto); dibuja un rectangulo solido
+        strokeRect(x,y,ancho,alto); dibuja un rectangulo vacio
+        clearRect(x,y,ancho,alto); borrador rectangular
+        strokeStyle: determina el color de contorno de la figura que estoy dibujando
+        fillStyle: determina el color de relleno
+        globalAlpha: la transparencia de las figuras
+
+        x e y posicionan la figura, alto y ancho son las dimensiones
+    -->
+    
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8559-1"/>
+    <title>Segunda web</title>
+<style>
+    #principal{
+        width: 500px;
+        /*background-color: blue;*/
+        text-align: center;
+        margin: 15px auto; /*El valor auto permite que se centre el texto en la pantalla, 
+        si cambio el tamaño de la misma el texto permanece centrado*/
+        padding: 15px; /*Genera espacio entre el margen y el texto*/
+        border: 3px solid red; /*borde agrega tamaño, tipo, color*/
+        border-radius: 15px; /*Asigna un borde redondeado a la caja. Se pueden establecer esquinas 
+        diferentes agregandole valores ej: border-radius: 15px 20px 10px 5px;*/
+        box-shadow: gray 5px 5px 5px; /*Sombreado de la caja, los valores corresponden al 
+        desplazamiento vertical y horizontal, el tercer valor es la difumuninacion*/
+        background: -moz-linear-gradient(top, blue 50%, lightblue 50%);
+        /*Opcional se puede agregar porcentaje de colores*/
+        /*background: -webkit-linear-gradient(top, blue, lightblue);*/
+        background: -webkit-radial-gradient(center, ellipse, blue, lightblue);
+        /*aplica un degradado en funcion del buscador*/
+        /*outline: 2px dashed blueviolet;
+        outline-offset: 15px; se pueden agregar bordes y espaciarlos*/
+        /*-webkit-transform: scale(0.5, -1); reduce o aumenta el tamaño del elemento. el 2do param es opcional, sirve para invertir el elemento*/
+        /*-webkit-transform: rotate(30deg); puede rotar el elemento en los grados que se le indique*/
+        /*transform: skew(30deg); otorga perspectiva*/
+    }
+
+    #principal:hover{ /*Pseudoclase: cuando posicion el mousse tiene caracteristicas diferenciales*/
+        transform: rotate(30deg);
+        transition: 1s ease 0.5s; /*genera un efecto en la transicion*/
+    }
+
+    #titulo{
+        font: bold 36px verdana;
+        text-shadow: lime 3px 3px 3px;
+        color: rgba(0,0,0,0.2);
+    }
+</style>
+
+
+</head>
+<body>
+<header id="principal">
+<span id="titulo">EstilosCSS3</span>
+</header>
+
+
+</body>
+</html>

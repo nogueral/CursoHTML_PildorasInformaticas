@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="insercionvideos.css">
+    <script src="insercionvideos.js"></script>
+</head>
+<body>
+    <section id="video"> <!--podemos agregar videos de esta manera x si algun navegador no soporta formatos mp3 u ogg-->
+        <video id="miVideo" width="720px" loop>
+            <!--
+                <video id="miVideo" width="520px" controls loop poster="imagenes/paisaje.jpg">
+                    el atributo poster permite agregar una imagen de portada al video
+                    el loop permite que se repita de forma indefinida
+                    el controls, agrega los controles para de el video
+                    el autoplay permite que se ejecute automaticamente al actualizar la pag
+            -->
+            <source src="videos/video-2012-04-05-14-22-32.mp4"> 
+            <source src="videos/video-2012-04-05-14-22-32.ogg">
+        </video>
+
+        <nav>
+            <div id="botones">
+                <button type="button" id="reproducir">Play</button>
+            </div>
+            <div id="barra">
+                <div id="progreso"></div>
+            </div>
+        </nav>
+    </section>
+    <!--<video src="videos/video-2012-04-05-14-22-32.mp4" controls width="520px"></video>-->
+</body>
+</html>

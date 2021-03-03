@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+</head>
+<body>
+    <section>
+        <form name="miFormulario" id="miFormulario" method="GET">
+           <!-- Email:<input type="email" name="texto" id="texto" autocomplete="off"><br><br>
+            Buscar:<input type="search" name="Buscar" id="Buscar" autocomplete="off"><br><br>
+            url:<input type="url" name="url" id="url" autocomplete="off" autofocus><br><br> -->
+            <!--Edad:&nbsp;<input type="number" name="edad" id="edad" min="0" max="100" step="5" placeholder="Multiplos de 5"><br><br>-->
+           <!-- Fecha:&nbsp;<input type="datetime-local" name="date" id="date" autocomplete="off"><br><br>-->
+           CPostal:&nbsp;<input pattern="[0:9]{5}" name="cpostal" id="cpostal">
+            <input type="submit" value="Enviar">
+        </form>
+
+        Nombre:&nbsp;<input type="text" name="nombre" id="nombre" form="miFormulario" autocomplete="off">
+
+        <!--
+            Elementos input
+            Atributos:
+
+            type: text, email, search, url, tel
+            Number: junto con min, max y step
+            Range: junto con min, max y step (funciona igual que el numero pero tiene un selector de rango)
+            date, week, month, time, datetime
+        -->
+
+        <!--
+            NUEVOS ATRIBUTOS
+            placeholder: coloca una marca de agua con un texto explicativo
+            required: campo requerido, debe completarse obligatoriamente
+            Multiple: enviar mas de un dato en un solo campo, se puede separar con ","
+            Autofocus: Coloca el foco en el holder indicado. en el ejemplo pusimos el foco en url
+            Pattern: validaciones especiales, como x ej un codigo postal
+            form: se indica el nombre del formulario al que pertence, sirve para que holders
+            manden info vinculada a un formulario especifico
+        -->
+    </section>
+
+    
+</body>
+</html>

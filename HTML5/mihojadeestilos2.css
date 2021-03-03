@@ -1,0 +1,31 @@
+#cabeceraweb{
+    background-color: blueviolet;
+}
+
+#navegacionPrincipal {
+    background-color: cadetblue;
+}
+
+#barraLateral {
+    background-color: chartreuse;
+    float: left; /*crea un elemento flotante. el resto del contenido lo rodea*/
+    height: 600px;
+}
+
+#contenidoPrincipal {
+    background-color: darkcyan;
+    margin-left: 210px;
+    padding-left: 15px;
+    padding-top: 15px;
+}
+
+#piePrincipal {
+    background-color: darkgoldenrod;
+    clear: left; /*permite "borrar" un elemento flotante. en lugar de rodearlo se superpone a este*/
+    margin-top: 20px;
+}
+
+li{
+    background-color: yellow;
+    display: inline; /*permite ordenar una lista, sobre una misma linea. por defecto pone una debajo de la otra*/
+}

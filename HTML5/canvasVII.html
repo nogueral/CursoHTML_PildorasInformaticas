@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformaciones</title>
+    <style>
+        #lienzo{
+            border: 1px solid #F00;
+        }
+    </style>
+
+    <script>
+
+        function Comenzar(){
+
+            var elemento = document.getElementById("lienzo");
+
+            var lienzo = elemento.getContext("2d");
+
+            /*
+            lienzo.font = "bold 20px verdana";
+
+            lienzo.fillText("Hola alumnos", 50, 20);
+
+            lienzo.translate(100, 100); // traslada el origen de coordenadas del lienzo
+
+            lienzo.scale(3,3); // cambia la escala del texto en funcion de los ejes X e Y
+            
+            lienzo.rotate(Math.PI); // rota el lienzo, la medida es en radianes.
+            
+            lienzo.fillText("Hola alumnos", -200, -150); // se debe repetir el texto porque el navegador lee de arriba a abajo
+            */
+
+            //lienzo.transform(1,0,0,1,0,0); valores por defecto
+
+            //lienzo.transform(3,1,2,3,150,200);
+
+            /*
+            el 1er y 4to param, multiplica el tamaño del lienzo en los ejes x e y
+            el 5to y 6to, traslada el origen x e y a otro punto del lienzo
+            el 2do param gira el texto, valor de angulo en radianes
+            el 3er parametro pone la letra en italica
+
+            IMPORTANTE:
+
+            El metodo transform es acumulativo, es decir, si modifico los parametros
+            este cambio se aplica sobre el cambio anterior
+            */
+
+            /*
+
+            lienzo.transform(3,0,0,1,0,0);
+
+            lienzo.font = "bold 20px verdana";
+
+            lienzo.fillText("Hola alumnos", 50, 50);
+
+            lienzo.transform(1,0,0,10,0,0);
+
+            lienzo.font = "bold 20px verdana";
+
+            lienzo.fillText("Hola alumnos", 50, 50);
+
+            //El metodo setTransform resetea los parametros a los valores por defecto
+
+            lienzo.setTransform(1,0,0,10,0,0);
+
+            lienzo.font = "bold 20px verdana";
+
+            lienzo.fillText("Hola alumnos", 70, 70);
+
+            */
+
+            lienzo.font = "bold 20px verdana";
+
+            lienzo.save(); // queda guardado el canvas con las caracteristicas q tiene hasta ahora
+
+            lienzo.fillText("Hola alumnos", 50, 50);
+
+            lienzo.translate(60, 70);
+
+            lienzo.rotate(Math.PI/180*55);
+
+            lienzo.fillText("Hola alumnos", 0, 0);
+
+            //lienzo.rotate(-Math.PI/180*55); // coloco el lienzo en la posicion anterior
+
+            lienzo.restore(); 
+
+            /*El metodo restore coloca el canvas en los valores que tenia al aplicar
+            el metodo save, de esta forma nos ahorramos tener que poner un rotate
+            en negativo por ejemplo para reestablecer los parametros*/
+
+            lienzo.translate(300, 400);
+
+            lienzo.scale(2, 2);
+
+            lienzo.fillText("Hola alumnos", 100, 100);
+
+        }
+
+        window.addEventListener("load", Comenzar, false);
+    </script>
+</head>
+<body>
+    <section>
+        <canvas id="lienzo" height="900" width="1200">
+
+        </canvas>
+    </section>
+    
+</body>
+</html>

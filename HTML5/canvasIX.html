@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animaciones I</title>
+    <script>
+
+        var elemento, lienzo;
+        var y=300;
+        var estado="bajando";
+        var arriba=y;
+        var horizontal=0;
+
+        function Comenzar(){
+
+            elemento = document.getElementById("lienzo");
+
+            lienzo = elemento.getContext("2d");
+
+            setInterval(Animacion,25);
+
+        }
+
+        function Animacion(){
+            
+            if(y<850 && estado=="bajando"){
+
+                lienzo.clearRect(0,0,1200,900);
+
+                lienzo.beginPath();
+
+                lienzo.arc(500+horizontal,y,40,0,Math.PI*2,false);
+
+                lienzo.fill();
+
+                y+=50;
+
+                horizontal+=4;
+            }
+
+            if(y==850){
+                estado="subiendo";
+                arriba+=50;
+            }
+
+            if(y>=arriba && estado=="subiendo"){
+                lienzo.clearRect(0,0,1200,900);
+
+                lienzo.beginPath();
+
+                lienzo.arc(500+horizontal,y,40,0,Math.PI*2,false);
+
+                lienzo.fill();
+
+                y-=50;
+
+                horizontal+=4;
+            }
+
+            if(y==arriba){
+                estado="bajando";
+            }
+
+        }
+
+        window.addEventListener("load", Comenzar, false);
+    </script>
+</head>
+<body>
+    <section>
+        <canvas id="lienzo" width="1200" height="900" style="border: 1px solid red">
+
+        </canvas>
+    </section>
+</body>
+</html>

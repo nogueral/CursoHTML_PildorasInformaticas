@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba degradado</title>
+    <style>
+        section{
+            width: 500px;
+            margin: auto; 
+        }
+
+       /* #lienzo{
+            background-color: red;
+        }*/
+    </style>
+    <script>
+        function Comenzar(){
+
+            var elemento = document.getElementById("lienzo"); // se indentifica el objeto canvas
+
+            lienzo = elemento.getContext("2d"); // se determinan las dimensiones del objeto
+
+            //var degradado = lienzo.createLinearGradient(0, 150, 500, 150); // se crea el objeto degradado
+
+            //var degradado = lienzo.createLinearGradient(0, 0, 500, 300); el degradado es en diagonal con estas coordenadas
+           
+            var degradado = lienzo.createRadialGradient(250, 150, 50, 250, 150, 300);
+            
+            degradado.addColorStop(0, "red"); // se agrega el 1er color
+            //degradado.addColorStop(0.8, "red"); hay mas cantidad de rojo que de verde
+
+            degradado.addColorStop(1, "green"); // se agrega el 2do color
+
+            lienzo.fillStyle = degradado; // para determinar el color de relleno del objeto lienzo, se asigna el objeto degradado
+            
+            lienzo.fillRect(0, 0, 500, 300); // la pagina solo colorea el dibujo
+
+            /*DEGRADADOS
+
+            createLinearGradient(x1, y1, x2, y2); crea un objeto para aplicar degradado al lienzo
+            createRadialGradient(x1, y1,r1, x2, y2, r2); crea un objeto para aplicar degradado circular
+            o radial. x e y marcan el centro, r el radio, se dibujan dos circulos.
+            addColorStop(posicion, color); posicion marca donde termina el degradado. valores entre 0 y 1
+            
+            www.w3.org -> diferentes APIs con sus metodos
+            */
+        }
+
+        window.addEventListener("load", Comenzar, false);
+    </script>
+</head>
+<body>
+    <section id="dibujo">
+        <canvas id="lienzo" width="500" height="300">
+
+        </canvas>
+
+    </section>
+    
+</body>
+</html>

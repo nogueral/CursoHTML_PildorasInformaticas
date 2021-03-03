@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trazados</title>
+    <script>
+        function Comenzar(){
+
+            var elemento = document.getElementById("lienzo");
+
+            var lienzo = elemento.getContext("2d");
+
+            lienzo.beginPath(); // inicializo el trazado
+
+            lienzo.moveTo(100, 200); // posiciono el punto
+
+            lienzo.lineTo(200, 200); // dibujo la linea colocando el punto de destino
+
+            lienzo.lineTo(150, 150); // dibujo la segunda linea
+
+            lienzo.lineTo(100, 200); // dibujo la linea final
+
+            //lienzo.closePath(); // cierro el trazado
+
+            lienzo.clip(); // creo una mascara
+
+            // con estas instrucciones lo que hago es establecer las coordenadas, pero aun no lo dibujo
+
+            //lienzo.stroke(); // dibujo la figura vacia
+
+            //lienzo.fill(); // dibujo un triangulo relleno
+
+            lienzo.beginPath();
+
+            for(i=0; i<250; i+=10){
+                lienzo.moveTo(0, i);
+                lienzo.lineTo(500, i);
+            }
+
+            lienzo.stroke();
+        }
+
+        /*
+        TRAZADOS
+
+        DOS METODOS PARA COMENZAR Y CERRAR EL TRAZADO:
+
+        beginPath() comienza la figura, es el primer metodo a llamar
+        closePath() termina la figura, ultimo metodo a llamar. si se utiliza fill() para dibujar
+        closePath puede ser ignorado
+
+        TRES METODOS PARA DIBUJAR EL TRAZADO
+
+        Stroke(): solo contorno
+        Fill(): figura solida
+        Clip(): Crea una mascara
+        */
+
+        window.addEventListener("load", Comenzar, false);
+    </script>
+</head>
+<body>
+    <section id="dibujo">
+        <canvas id="lienzo" height="300" width="500" style="border: 1px solid #000000;"></canvas>
+    </section>
+    
+</body>
+</html>

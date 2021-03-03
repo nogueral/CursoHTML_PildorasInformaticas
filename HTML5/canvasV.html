@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de lineas</title>
+    <style>
+        #lienzo{
+            border: 1px solid red;
+        }
+
+        section{
+            width: 800px;
+            position: relative;
+            margin: auto;
+        }
+    </style>
+
+    <script>
+        function Comenzar(){
+
+            var elemento = document.getElementById("lienzo");
+
+            var lienzo = elemento.getContext("2d");
+
+            lienzo.beginPath();
+
+            lienzo.arc(200,150,100,0,Math.PI*2,false);
+
+            lienzo.stroke();
+
+            lienzo.lineWidth = 10; // grosor de linea
+
+            lienzo.lineCap = "round"; // terminacion de linea
+
+            lienzo.beginPath(); // cada vez q cambio el tipo de linea debo iniciar de vuelta el trazado
+
+            lienzo.arc(200,170,60,0,Math.PI,false);
+
+            lienzo.stroke();
+
+            lienzo.lineWidth = 5;
+
+            lienzo.lineJoin = "miter"; // indica como tiene que ser el punto en q se tocan las lineas
+
+            lienzo.miterLimit = 2;
+
+            lienzo.beginPath();
+
+            lienzo.moveTo(195,135);
+            lienzo.lineTo(215, 155);
+            lienzo.lineTo(195, 155);
+
+            lienzo.stroke();
+
+            lienzo.lineWidth = 1;
+
+            lienzo.beginPath();
+
+            lienzo.arc(175,110,7,0,Math.PI*2,false);
+
+            lienzo.arc(225,110,7,0,Math.PI*2,false);
+
+            lienzo.fill();
+
+            lienzo.beginPath();
+
+            lienzo.arc(168,106,15,0,Math.PI*2,false);
+
+            lienzo.stroke();
+
+            lienzo.beginPath();
+
+            lienzo.arc(232,106,15,0,Math.PI*2,false);
+
+            lienzo.stroke();
+
+            /*
+            API CANVAS PROPIEDADES
+
+            lineWidth: grosor de linea, por defecto=1
+            lineCap: terminacion de linea. valores:
+            butt, round, square
+
+            lineJoin: conexion entre lineas. valores: round, bevel, miter
+
+            miterLimit: para usar junto a lineJoin con valor miter. Determina
+            cuanto ha de extenderse la union entre lineas
+
+            IMPORTANTE: cada vez que cambiemos las caracteristicas de la linea ha de comenzarse un nuevo
+            trazado con beginPath();
+            
+            */
+        }
+
+        window.addEventListener("load", Comenzar, false);
+    </script>
+</head>
+<body>
+    <section>
+        <canvas id="lienzo" width="800" height="600">
+
+        </canvas>
+    </section>
+    
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola Mundo</title>
+    <style>
+        #tituloPrincipal{
+            width: 500px;
+            background-color: blue;
+            margin: 15px auto;
+            padding: 15px;
+            border: 3px solid red;
+            text-align: center;
+            border-radius: 10px 20px 30px 15px;
+            box-shadow: greenyellow 5px 5px 5px;
+        }
+
+        #textoTituloPrincipal{
+            font: bold 18px verdana;
+            text-shadow: greenyellow 3px 3px 3px;
+        }
+
+        li:nth-child(odd){
+            color:hotpink;
+        }
+    </style>
+</head>
+<body>
+    <header id="tituloPrincipal">
+        <span id="textoTituloPrincipal">
+            <h1>Titulo principal</h1>
+        </span>
+    </header>
+    <nav>
+        <ul>
+            <li>Enlaces de navegacion dentro de la pagina web</li>
+            <li>Enlaces de navegacion dentro de la pagina web</li>
+            <li>Enlaces de navegacion dentro de la pagina web</li>
+            <li>Enlaces de navegacion dentro de la pagina web</li>
+        </ul>
+    </nav>
+    <aside> <!--Contenido que esta indirectamente relacionado con la pagina-->
+        <blockquote>Pequeña biografia del autor</blockquote>
+    </aside>
+    <section> <!--Una seccion especifica del contenido, con su propio titulo, texto, imagenes, etc-->
+        <h3>Titulo de la seccion</h3>
+        <figure>
+            <img src="imagenes/paisaje.jpg" alt="Paisaje" width="30%">
+            <figcaption>Paisaje invernal</figcaption>
+        </figure>
+        <article>
+            <h4><em>Noticia 1</em></h4>
+            <p>Parrafo <mark>noticia 1</mark></p>
+            <footer>Comentarios noticia 1</footer>
+        </article>
+        <article>
+            <h4>Noticia 2</h4>
+            <p>Parrafo noticia 2</p>
+            <footer>Comentarios <strong>noticia 2</strong></footer>
+        </article>
+
+    </section>
+    <footer>
+        <small><!--Textos legales-->
+            Derechos reservados
+        </small>
+    </footer>
+    
+</body>
+</html>
